@@ -99,7 +99,7 @@ interface IPointLoadCalc {
     isDeflectionSafe: boolean
 }
 
-interface IPointLoadCalPretty {
+interface IPointLoadCalcPretty {
     beamName: string
     beamLength: string
     pointLoad: string
@@ -120,7 +120,7 @@ function pointLoadCalc(beamParams: IBeamPointLoadParams): IPointLoadCalc {
     }
 }
 
-function prettyPrint (calcResults: IPointLoadCalc): IPointLoadCalPretty {
+function prettyPrint (calcResults: IPointLoadCalc): IPointLoadCalcPretty {
     return {
         beamName: calcResults.beamParams.beamType.name,
         beamLength: `${calcResults.beamParams.length} mm`,
