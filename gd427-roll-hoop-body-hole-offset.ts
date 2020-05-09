@@ -1,4 +1,5 @@
-const rollHoops: HoopOffsets = {
+// Hoop (A) on the offside
+const rollHoopsConfigA: HoopOffsets = {
   nearside: {
     outerLeg: {
       frontToBack: {
@@ -48,6 +49,119 @@ const rollHoops: HoopOffsets = {
       },
       nsToOs: {
         angle: 89.75,
+      },
+    },
+  },
+};
+
+// Hoop (A) on the nearside
+const rollHoopsConfigB: HoopOffsets = {
+  nearside: {
+    outerLeg: {
+      frontToBack: {
+        angle: 89.20,
+      },
+      nsToOs: {
+        angle: -89.63,
+      },
+    },
+    innerLeg: {
+      frontToBack: {
+        angle: 89.02,
+      },
+      nsToOs: {
+        angle: 89.42,
+      },
+    },
+    rearLeg: {
+      frontToBack: {
+        angle: 88.27,
+      },
+      nsToOs: {
+        angle: 89.68,
+      },
+    },
+  },
+  offside: {
+    outerLeg: {
+      frontToBack: {
+        angle: -89.79,
+      },
+      nsToOs: {
+        angle: 89.36,
+      },
+    },
+    innerLeg: {
+      frontToBack: {
+        angle: -89.43,
+      },
+      nsToOs: {
+        angle: 89.88,
+      },
+    },
+    rearLeg: {
+      frontToBack: {
+        angle: -88.86,
+      },
+      nsToOs: {
+        angle: 89.44,
+      },
+    },
+  },
+};
+
+
+// Hoop (A) on the nearside without hoop legs pulled when bolted down i.e spacers needed
+const rollHoopsConfigC: HoopOffsets = {
+  nearside: {
+    outerLeg: {
+      frontToBack: {
+        angle: -89.91,
+      },
+      nsToOs: {
+        angle: -89.97,
+      },
+    },
+    innerLeg: {
+      frontToBack: {
+        angle: -89.95,
+      },
+      nsToOs: {
+        angle: 89.39,
+      },
+    },
+    rearLeg: {
+      frontToBack: {
+        angle: 89.36,
+      },
+      nsToOs: {
+        angle: 89.85,
+      },
+    },
+  },
+  offside: {
+    outerLeg: {
+      frontToBack: {
+        angle: 89.51,
+      },
+      nsToOs: {
+        angle: 89.42,
+      },
+    },
+    innerLeg: {
+      frontToBack: {
+        angle: 89.69,
+      },
+      nsToOs: {
+        angle: -89.89,
+      },
+    },
+    rearLeg: {
+      frontToBack: {
+        angle: -89.52,
+      },
+      nsToOs: {
+        angle: 89.48,
       },
     },
   },
@@ -107,17 +221,15 @@ const visualiseHolePositions = (rollHoop: HoopOffset) => {
         console.log(`${leg} => ${plane}: ${getOffsetLabel(rollHoop[leg][plane].absolute)}`);
       });
   });
-
-  return rollHoops;
 }
 
-calculateAbsoluteOffsetAtBodyHolePosition(rollHoops);
+calculateAbsoluteOffsetAtBodyHolePosition(rollHoopsConfigC);
 
 console.log(`Nearside`)
-visualiseHolePositions(rollHoops.nearside)
+visualiseHolePositions(rollHoopsConfigC.nearside)
 
 console.log(`Offside`)
-visualiseHolePositions(rollHoops.offside)
+visualiseHolePositions(rollHoopsConfigC.offside)
 
 interface HoopLegOffset {
   angle: number;
