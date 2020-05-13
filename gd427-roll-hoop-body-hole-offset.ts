@@ -1,4 +1,6 @@
-// Hoop (A) on the nearside without hoop legs pulled when bolted down i.e spacers needed
+// For a running version in browser with visualiser:
+// https://jsfiddle.net/ptbsw6rx/
+
 const rollHoopsConfig: HoopOffsets = {
   nearside: {
     outerLeg: {
