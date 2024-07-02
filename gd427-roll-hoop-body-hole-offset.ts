@@ -1,5 +1,26 @@
 // For a running version in browser with visualiser:
-// https://jsfiddle.net/ptbsw6rx/
+// https://jsfiddle.net/mwxg1e8d/
+
+interface HoopLegOffset {
+  angle: number;
+  absolute?: number;
+}
+
+interface HoopLegPlane {
+  frontToBack: HoopLegOffset;
+  nsToOs: HoopLegOffset;
+}
+
+interface HoopOffset {
+  outerLeg: HoopLegPlane;
+  innerLeg: HoopLegPlane;
+  rearLeg: HoopLegPlane;
+}
+
+interface HoopOffsets {
+  nearside: HoopOffset;
+  offside: HoopOffset;
+}
 
 const rollHoopsConfig: HoopOffsets = {
   nearside: {
@@ -234,24 +255,3 @@ const visualiseHolePositions = (
 calculateAbsoluteOffsetAtBodyHolePosition(rollHoopsConfig);
 visualiseHolePositions(rollHoopsConfig.nearside, "hoop_nearside");
 visualiseHolePositions(rollHoopsConfig.offside, "hoop_offside");
-
-interface HoopLegOffset {
-  angle: number;
-  absolute?: number;
-}
-
-interface HoopLegPlane {
-  frontToBack: HoopLegOffset;
-  nsToOs: HoopLegOffset;
-}
-
-interface HoopOffset {
-  outerLeg: HoopLegPlane;
-  innerLeg: HoopLegPlane;
-  rearLeg: HoopLegPlane;
-}
-
-interface HoopOffsets {
-  nearside: HoopOffset;
-  offside: HoopOffset;
-}
