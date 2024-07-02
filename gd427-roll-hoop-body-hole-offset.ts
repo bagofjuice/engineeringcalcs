@@ -3,7 +3,7 @@
 // https://github.com/bagofjuice/engineeringcalcs/blob/master/gd427-roll-hoop-body-hole-offset.ts
 
 // For a running version in browser with visualiser:
-// https://jsfiddle.net/mwxg1e8d/
+// https://jsfiddle.net/8sabqox3/
 
 interface HoopLegOffset {
   angle: number;
